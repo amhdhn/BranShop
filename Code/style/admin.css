@@ -1,0 +1,713 @@
+/* header */
+
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-family: var(--poppinsFont);
+    position: sticky;
+    top: 0;
+    background-color: var(--bgClr);
+    z-index: 997;
+}
+
+header.activeSearch {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.233);
+}
+
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 35px;
+}
+
+.logo {
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--txtClr1);
+}
+
+.logo span {
+    color: #d85139;
+}
+
+.headerBtnList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn {
+    font: 1.4em "material icons";
+    cursor: pointer;
+    color: var(--txtClr2);
+}
+
+
+/* controllSection */
+
+.controllSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+
+/* sectionTitleList */
+
+.sectionTitleList {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    gap: 5px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 90%;
+    direction: rtl;
+    position: sticky;
+    top: 35px;
+    background-color: var(--bgClr);
+    z-index: 990;
+}
+
+.sectionTitleList.active {
+    display: flex;
+}
+
+.sectionTitleItem {
+    white-space: nowrap;
+    font: .7em var(--iran);
+    padding: 5px 15px;
+    border-radius: 7px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color .6s;
+}
+
+.sectionTitleItem:hover {
+    background-color: rgba(0, 0, 0, 0.082);
+}
+
+.sectionTitleItem.active {
+    border: 2px solid rgba(0, 0, 0, 0.233);
+}
+
+.controlBody {
+    width: 100%;
+}
+
+
+/* usersList */
+
+.usersSection {
+    width: 100%;
+    display: none;
+}
+
+
+/* searchDivContainer */
+
+.searchDivContainer {
+    position: sticky;
+    top: 85px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: var(--bgClr);
+    z-index: 890;
+    padding: 10px 0;
+}
+
+.searchDiv {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.searchDiv::before {
+    position: absolute;
+    right: 10px;
+    margin-top: 6px;
+    content: "\e8b6";
+    color: var(--blueClr);
+    font: 1.4em "material icons";
+}
+
+.searchDiv::after {
+    content: "";
+    width: 100%;
+    height: 20px;
+    background-image: linear-gradient(to bottom, #f0f0f0, #f0f0f080, #f0f0f007);
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+}
+
+.searchDiv input {
+    font: .75em var(--iran);
+    color: var(--txtClr1);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.021);
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    outline: none;
+    height: 35px;
+    border-radius: 7px;
+    direction: rtl;
+    padding: 0 40px 0 45px;
+    box-sizing: border-box;
+}
+
+.searchConfirm,
+.searchProductConfirm,
+.searchPurchaseConfirm {
+    position: absolute;
+    left: 15px;
+    margin-top: 7px;
+    outline: none;
+    border: none;
+    font: .75em var(--iran);
+    color: var(--txtClr2);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .6s;
+}
+
+.searchInput:focus+.searchConfirm,
+.searchProductInput:focus+.searchProductConfirm,
+.searchPurchaseInput:focus+.searchPurchaseConfirm {
+    opacity: 1;
+}
+
+.searchResult,
+.searchProductResult,
+.searchPurchaseResult {
+    background-color: rgba(0, 0, 0, 0.021);
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    margin-top: 10px;
+    align-self: flex-end;
+    padding: 5px 15px 5px 10px;
+    border-radius: 7px;
+    color: var(--txtClr1);
+    font: .75em var(--iran);
+    direction: rtl;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.searchResultClear,
+.searchProductResultClear,
+.searchPurchaseResultClear {
+    font: 1.35em "material icons";
+    color: var(--txtClr2);
+}
+
+.noResultText {
+    font: .75em var(--iran);
+    color: var(--txtClr2);
+    direction: rtl;
+    position: relative;
+    margin: 60px 0 20px;
+}
+
+.noResultText::before {
+    content: "\e001";
+    font: 4em "material icons";
+    color: var(--txtClr3);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -60px;
+}
+
+
+/* usersList */
+
+.usersList {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 10px auto 40px;
+    gap: 20px;
+}
+
+.userItem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.021);
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+.itemDiv {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+    justify-content: space-between;
+    direction: rtl;
+    width: 100%;
+}
+
+.itemDiv label {
+    font: .75em var(--iran);
+    color: var(--txtClr2);
+}
+
+.itemDiv input {
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 0 40px 0 10px;
+    font: .75em var(--iran);
+    color: var(--txtClr2);
+    background-color: transparent;
+    margin-top: 7px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.082);
+    transition: border-bottom .6s;
+    pointer-events: none;
+}
+
+.itemDiv input:focus {
+    border-bottom: 2px solid var(--blueClr);
+}
+
+.itemDiv input.enable {
+    cursor: text;
+    pointer-events: unset;
+}
+
+.itemDiv textarea {
+    height: 100px;
+    border: none;
+    outline: none;
+    padding: 0 40px 0 10px;
+    font: .75em var(--iran);
+    color: var(--txtClr2);
+    background-color: transparent;
+    margin-top: 7px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.082);
+    transition: border-bottom .6s;
+    resize: none;
+}
+
+.itemDiv textarea:focus {
+    border-bottom: 2px solid var(--blueClr);
+}
+
+.itemDiv textarea.enable {
+    cursor: text;
+}
+
+.controllDiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-top: 15px;
+    animation: fade .6s;
+}
+
+.editUser,
+.deleteUser {
+    font-family: "material icons";
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: transform .6s;
+    background-color: transparent;
+}
+
+.editUser {
+    font-size: 1.75em;
+    color: rgb(15, 173, 15);
+}
+
+.deleteUser {
+    font-size: 1.6em;
+    color: rgb(230, 64, 52);
+}
+
+.editUser:hover,
+.deleteUser:hover {
+    transform: scale(1.2);
+}
+
+.editDiv {
+    width: 100%;
+    display: none;
+    grid-template-columns: 49% 49%;
+    height: 35px;
+    margin-top: 15px;
+    justify-content: space-between;
+    align-items: center;
+    animation: fade .6s;
+}
+
+.saveUser,
+.cancelUser {
+    border-radius: 7px;
+    font: .75em var(--iran);
+    height: 100%;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+}
+
+.saveUser {
+    background-color: rgb(81, 160, 73);
+}
+
+.cancelUser {
+    background-color: rgb(230, 64, 52);
+}
+
+.deleteModal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 997;
+    background-color: rgba(0, 0, 0, 0.623);
+    animation: fade .6s;
+}
+
+.deleteModalDiv {
+    width: 90%;
+    box-sizing: border-box;
+    padding: 20px 15px;
+    background-color: var(--bgClr);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.deleteModalMessage {
+    font: .85em var(--iran);
+    color: var(--txtClr1);
+    width: 100%;
+    direction: rtl;
+}
+
+.cancelDeleteModal,
+.confirmDeleteModal {
+    width: 70px;
+    padding: 5px 0;
+    font: .75em var(--iran);
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.cancelDeleteModal {
+    background-color: rgb(81, 160, 73);
+}
+
+.confirmDeleteModal {
+    background-color: rgb(230, 64, 52);
+}
+
+
+/* productSection */
+
+.productSection {
+    width: 100%;
+    display: none;
+}
+
+.productList {
+    display: grid;
+    grid-template-columns: 100%;
+    width: 90%;
+    margin: 10px auto 40px;
+    justify-content: center;
+    gap: 20px 0;
+    direction: rtl;
+}
+
+.productItem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.021);
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+.productImg {
+    width: 100%;
+    border-radius: 5px;
+    aspect-ratio: 1/1;
+}
+
+.productInfoDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+}
+
+.infoDiv {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    direction: rtl;
+    gap: 4px;
+    width: 100%;
+}
+
+.infoDiv label {
+    font: .75em var(--iran);
+    color: var(--txtClr2);
+}
+
+.infoDiv p {
+    border-bottom: 1px solid var(--txtClr3);
+    padding: 5px 0 10px;
+    font: .75em var(--iran);
+    color: var(--txtClr1);
+    width: 100%;
+    white-space: no-wrap;
+    overflow-x: hidden;
+}
+
+
+/* editProductContnainer */
+
+.editProductContnainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 997;
+    background-color: rgba(0, 0, 0, 0.623);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fade .6s;
+}
+
+.editProductDiv {
+    padding: 20px;
+    background-color: var(--bgClr);
+    border-radius: 7px;
+    overflow-y: auto;
+    max-height: 90%;
+    box-sizing: border-box;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 500px;
+}
+
+.closeEditContainerBtn {
+    outline: none;
+    border: none;
+    align-self: flex-end;
+    color: #d85139;
+    cursor: pointer;
+    transition: translate .6s;
+}
+
+.closeEditContainerBtn:hover {
+    transform: scale(1.1);
+}
+
+.editProductImg {
+    width: 80%;
+    border-radius: 5px;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+}
+
+.infoDiv input {
+    font: .75em var(--iran);
+    color: var(--txtClr2);
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--txtClr3);
+    padding: 5px 0;
+    box-sizing: border-box;
+}
+
+.infoDiv textarea {
+    resize: none;
+    font: .75em var(--iran);
+    color: var(--txtClr2);
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--txtClr3);
+    padding: 5px 0;
+    box-sizing: border-box;
+    height: 100px;
+}
+
+.cancelEditProduct,
+.confirmEditProduct {
+    width: 70px;
+    padding: 5px 0;
+    font: .75em var(--iran);
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.cancelEditProduct {
+    background-color: rgb(81, 160, 73);
+}
+
+.confirmEditProduct {
+    background-color: rgb(230, 64, 52);
+}
+
+.editProductDiv select {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    height: 40px;
+    border-bottom: 1px solid var(--txtClr3);
+    padding: 10px 0;
+    box-sizing: border-box;
+    font: .8em var(--iran);
+    direction: rtl;
+}
+
+
+/* purchaseSection */
+
+.purchaseSection {
+    width: 100%;
+    display: none;
+}
+
+.purchaseList {
+    display: grid;
+    grid-template-columns: 100%;
+    width: 90%;
+    margin: 10px auto 40px;
+    justify-content: center;
+    gap: 20px 0;
+    direction: rtl;
+}
+
+.purchaseItem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.021);
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+
+/* active */
+
+.active {
+    display: flex;
+}
+
+@media screen and (min-width:460px) {
+    .productList {
+        grid-template-columns: 48% 48%;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width:649px) {
+    .controllSection {
+        display: grid;
+        align-items: flex-start;
+        justify-content: space-between;
+        grid-template-columns: 75% 20%;
+        max-width: 1100px;
+    }
+    .sectionTitleList {
+        flex-direction: column;
+        order: 2;
+        height: 180px;
+        border: 1px solid rgba(0, 0, 0, 0.116);
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 7px;
+        align-items: unset;
+        position: sticky;
+        top: 40px;
+        margin: 0 0 40px;
+    }
+    .sectionTitleItem {
+        border-radius: 0;
+        box-sizing: border-box;
+    }
+    .sectionTitleItem:hover {
+        background-color: rgba(0, 0, 0, 0.082);
+    }
+    .sectionTitleItem.active {
+        background-color: rgba(0, 0, 0, 0.041);
+        border: none;
+        border-right: 5px solid rgba(0, 0, 0, 0.493);
+    }
+    .controlBody {
+        display: flex;
+        justify-content: right;
+        position: relative;
+    }
+    .usersSection,
+    .productSection,
+    .purchaseSection {
+        align-self: unset;
+        margin: 0 0 60px;
+    }
+    .loadingDivContainer {
+        margin: 0;
+    }
+    /* userlist */
+    .searchDivContainer {
+        top: 35px;
+    }
+    /* productList */
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

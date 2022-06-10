@@ -1,0 +1,495 @@
+/* header */
+
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-family: var(--poppinsFont);
+    position: sticky;
+    top: 0;
+    background-color: var(--bgClr);
+    z-index: 997;
+}
+
+header.activeSearch {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.233);
+}
+
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 5px 0;
+}
+
+.logo {
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--txtClr1);
+}
+
+.logo span {
+    color: #d85139;
+}
+
+.headerBtnList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn {
+    font: 1.4em "material icons";
+    cursor: pointer;
+    color: var(--txtClr2);
+}
+
+.logoutBtn {
+    outline: none;
+    border: none;
+    font-size: 1.32em;
+}
+
+
+/* controll section */
+
+.controllSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.sectionTitleList {
+    display: none;
+    align-items: center;
+    height: 50px;
+    gap: 5px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 90%;
+    direction: rtl;
+    position: sticky;
+    top: 35px;
+    background-color: var(--bgClr);
+    z-index: 990;
+}
+
+.sectionTitleList.active {
+    display: flex;
+}
+
+.sectionTitleItem {
+    white-space: nowrap;
+    font: .7em var(--iran);
+    padding: 5px 15px;
+    border-radius: 7px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color .6s;
+}
+
+.sectionTitleItem:hover {
+    background-color: rgba(0, 0, 0, 0.082);
+}
+
+.sectionTitleItem.active {
+    border: 2px solid rgba(0, 0, 0, 0.233);
+}
+
+.controlBody {
+    width: 100%;
+}
+
+
+/* userInfoSection */
+
+.userInfoSection {
+    display: none;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto 60px;
+}
+
+.editInfo {
+    border: 2px solid rgb(175, 64, 45);
+    padding: 5px 10px;
+    font: .75em var(--iran);
+    color: rgb(175, 64, 45);
+    border-radius: 7px;
+    width: fit-content;
+    align-self: flex-end;
+    cursor: pointer;
+    transition: background-color .6s;
+    margin: 10px 0 0;
+}
+
+.editInfo:hover {
+    background-color: rgba(175, 64, 45, 0.116);
+}
+
+.cancelEdit {
+    border: 2px solid rgb(175, 64, 45);
+    padding: 5px 10px;
+    font: .75em var(--iran);
+    color: rgb(175, 64, 45);
+    border-radius: 7px;
+    width: fit-content;
+    align-self: flex-end;
+    cursor: pointer;
+    transition: background-color .6s;
+    display: none;
+}
+
+.cancelEdit:hover {
+    background-color: rgba(175, 64, 45, 0.116);
+}
+
+.infoParentDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    direction: rtl;
+    margin-top: 20px;
+    position: relative;
+}
+
+label {
+    font: .9em var(--iran);
+    color: var(--txtClr1);
+    position: relative;
+}
+
+label::after {
+    font: 1.4em "material icons";
+    position: absolute;
+    right: 5px;
+    margin-top: 38px;
+    color: var(--blueClr);
+}
+
+.nameTitle::after {
+    content: "\ea67";
+}
+
+.lNameTitle::after {
+    content: "\ea67";
+}
+
+.addressTitle::after {
+    content: "\e55e";
+}
+
+.phoneNumberTitle::after {
+    content: "\e0b0";
+}
+
+.infoParentDiv input {
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 0 40px 0 10px;
+    font: .85em var(--iran);
+    color: var(--txtClr2);
+    background-color: transparent;
+    margin-top: 7px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.082);
+    transition: border-bottom .6s;
+    cursor: default;
+    pointer-events: none;
+}
+
+.infoParentDiv input.active {
+    cursor: text;
+    pointer-events: unset;
+}
+
+.infoParentDiv.active input:focus {
+    border-bottom: 2px solid var(--blueClr);
+}
+
+.confirmEdit {
+    padding: 5px 10px;
+    font: .8em var(--iran);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 35px;
+    height: 40px;
+    background-color: rgb(61, 175, 76);
+    display: none;
+}
+
+
+/* changePassSection */
+
+.changePassSection {
+    display: none;
+    flex-direction: column;
+    width: 88%;
+    margin: 0 auto 60px;
+}
+
+.passParentDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    direction: rtl;
+    margin-top: 20px;
+    position: relative;
+}
+
+.passParentDiv input {
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 0 40px 0 10px;
+    font: .85em var(--iran);
+    color: var(--txtClr2);
+    background-color: transparent;
+    margin-top: 7px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.082);
+    transition: border-bottom .6s;
+}
+
+.passParentDiv.active input:focus {
+    border-bottom: 2px solid var(--blueClr);
+}
+
+.title {
+    font: .88em var(--iran);
+    color: var(--txtClr1);
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.oldPassTitle::after {
+    content: "\e898";
+}
+
+.newPassTitle::after {
+    content: "\e897";
+}
+
+.confirmPassTitle::after {
+    content: "\e897";
+}
+
+.confirmEditPass {
+    padding: 5px 10px;
+    font: .8em var(--iran);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 35px;
+    height: 40px;
+    background-color: rgb(61, 175, 76);
+}
+
+
+/* historySection */
+
+.historySection {
+    display: none;
+    flex-direction: column;
+    width: 88%;
+    margin: 0 auto 60px;
+    min-height: 400px;
+}
+
+.historyList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    margin: 0 0 60px;
+}
+
+.historyItem {
+    background-color: rgba(0, 0, 0, 0.048);
+    padding: 10px;
+    box-sizing: border-box;
+    direction: rtl;
+    border-radius: 5px;
+    font-family: var(--iran);
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.historyItem p {
+    color: var(--txtClr1);
+    position: relative;
+    padding-right: 25px;
+    font-size: .8em;
+}
+
+.historyItem p::before {
+    font: 1.4em "material icons";
+    color: var(--blueClr);
+    right: 0;
+    position: absolute;
+}
+
+.historyName::before {
+    content: "\ef3e";
+}
+
+.historyPrice::before {
+    content: "\ea15";
+}
+
+.historyAddress::before {
+    content: "\e55e";
+}
+
+.historyPhoneNumber::before {
+    content: "\e0b0";
+}
+
+.historyCode::before {
+    content: "\e00a";
+}
+
+.historyProgress::before {
+    content: "\e918";
+}
+
+.historyDetails {
+    line-height: 28px;
+}
+
+.historyDetails::before {
+    content: "\e0ee";
+}
+
+.noHistoryFound {
+    font: .85em var(--iran);
+    color: var(--txtClr2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    direction: rtl;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 150px;
+}
+
+.noHistoryFound::before {
+    position: absolute;
+    left: 50%;
+    margin-top: -100px;
+    transform: translateX(-50%);
+    content: "\e001";
+    font: 4em "material icons";
+    color: var(--txtClr2);
+}
+
+
+/* loading */
+
+.loadingDivContainer {
+    width: 88%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.loadingDiv {
+    width: 26px;
+    height: 26px;
+    background-image: linear-gradient(to right, #00000031, var(--bgClr));
+    border-radius: 50%;
+    position: relative;
+    animation: spin 1s linear infinite;
+}
+
+.loadingDiv::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bgClr);
+    height: 20px;
+    width: 20px;
+    content: "";
+    border-radius: 50%;
+}
+
+
+/* active */
+
+.active {
+    display: flex;
+}
+
+@media screen and (min-width:649px) {
+    .controllSection {
+        display: grid;
+        align-items: flex-start;
+        justify-content: space-between;
+        grid-template-columns: 75% 20%;
+        max-width: 1100px;
+    }
+    .sectionTitleList {
+        flex-direction: column;
+        order: 2;
+        height: 180px;
+        border: 1px solid rgba(0, 0, 0, 0.116);
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 7px;
+        align-items: unset;
+        position: sticky;
+        top: 40px;
+        margin: 0 0 40px;
+    }
+    .sectionTitleItem {
+        border-radius: 0;
+        box-sizing: border-box;
+    }
+    .sectionTitleItem:hover {
+        background-color: rgba(0, 0, 0, 0.082);
+    }
+    .sectionTitleItem.active {
+        background-color: rgba(0, 0, 0, 0.041);
+        border: none;
+        border-right: 5px solid rgba(0, 0, 0, 0.493);
+    }
+    .controlBody {
+        display: flex;
+        justify-content: right;
+        position: relative;
+    }
+    .userInfoSection,
+    .changePassSection,
+    .historySection {
+        max-width: 500px;
+        align-self: unset;
+        margin: 0 0 60px;
+    }
+    .loadingDivContainer {
+        margin: 0;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

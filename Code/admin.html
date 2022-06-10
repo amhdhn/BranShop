@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیرت سایت</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style/admin.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/footer.css">
+</head>
+
+<body>
+    <header class="container">
+        <div class="headerRow">
+            <a href="./index.html" class="logo">Bran<span>Shop</span></a>
+            <div class="headerBtnList">
+                <a href="./index.html" class="userBtn btn">home</a>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="controllSection container">
+        <div class="sectionTitleList hideScrollBar">
+            <p class="sectionTitleItem manageUsersBtn active">کاربران</p>
+            <p class="sectionTitleItem manageProductBtn">محصولات</p>
+            <p class="sectionTitleItem managePurchaseBtn">سفارشات</p>
+        </div>
+
+        <div class="controlBody">
+            <div class="usersSection">
+                <div class="searchDivContainer">
+                    <div class="searchDiv">
+                        <input type="text" class="searchInput" placeholder="برای جستجو ایمیل کاربر را وارد کنید.">
+                        <button class="searchConfirm">جستجو</button>
+                        <p class="searchResult"><span class="searchResultSpan">Somthing</span> <span class="searchResultClear">close</span></p>
+                    </div>
+                </div>
+                <div class="usersList"></div>
+            </div>
+
+            <div class="productSection">
+                <div class="searchDivContainer">
+                    <div class="searchDiv">
+                        <input type="text" class="searchProductInput" placeholder="برای جستجو نام محصول را وارد کنید.">
+                        <button class="searchProductConfirm">جستجو</button>
+                        <p class="searchProductResult"><span class="searchProductResultSpan">Somthing</span> <span class="searchProductResultClear">close</span></p>
+                    </div>
+                </div>
+                <div class="productList"></div>
+
+                <div class="editProductContnainer">
+                    <div class="editProductDiv customScrollBar">
+                        <button class="closeEditContainerBtn btn">close</button>
+                        <img src="" alt="" class="editProductImg">
+                        <div class="infoDiv">
+                            <label>نام :</label>
+                            <input class="editProductName" type="text" placeholder="نام محصول را وارد کنید.">
+                        </div>
+                        <div class="infoDiv">
+                            <label>قیمت :</label>
+                            <input class="editProductPrice" type="number" placeholder="قیمت محصول را وارد کنید.">
+                        </div>
+                        <div class="infoDiv">
+                            <label>تعداد :</label>
+                            <input class="editProductNumber" type="number" placeholder="تعداد محصول را وارد کنید.">
+                        </div>
+                        <div class="infoDiv">
+                            <label>تخفیف ( درصد ) :</label>
+                            <input class="editProductDiscount" type="number" placeholder="درصد تخفیف محصول را وارد کنید.">
+                        </div>
+                        <div class="infoDiv">
+                            <label>توضیحات :</label>
+                            <textarea placeholder="توضیحات محصول را وارد کنید." class="editProductInfo customScrollBar"></textarea>
+                        </div>
+                        <div class="infoDiv">
+                            <label>دسته :</label>
+                            <select class="catSelect"></select>
+                        </div>
+                        <div class="infoDiv">
+                            <label>زیر دسته :</label>
+                            <select class="subCatSelect"></select>
+                        </div>
+
+
+                        <div class="controllDiv">
+                            <button class="cancelEditProduct">لغو</button>
+                            <button class="confirmEditProduct">تایید</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="purchaseSection">
+                <div class="searchDivContainer">
+                    <div class="searchDiv">
+                        <input type="text" class="searchPurchaseInput" placeholder="برای جستجو کد رهگیری سفارش را وارد کنید.">
+                        <button class="searchPurchaseConfirm">جستجو</button>
+                        <p class="searchPurchaseResult"><span class="searchPurchaseResultSpan">Somthing</span> <span class="searchPurchaseResultClear">close</span></p>
+                    </div>
+                </div>
+                <div class="purchaseList">
+                    <div class="purhcaseItem">
+                        <div class="infoDiv">
+                            <label>زیر دسته :</label>
+                            <input type="text" class="purchaseName">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="loadingDivContainer">
+                <div class="loadingDiv">
+                </div>
+            </div>
+
+            <div class="deleteModal">
+                <div class="deleteModalDiv">
+                    <p class="deleteModalMessage">برای حذف تایید کنید.</p>
+                    <div class="deleteControllDiv">
+                        <button class="cancelDeleteModal">لغو</button>
+                        <button class="confirmDeleteModal">تایید</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="modalContainer">
+        <div class="modalDiv">
+            <p class="modalMsg"></p>
+        </div>
+    </section>
+
+    <footer class="container">
+
+        <div class="aboutUs">
+            <p class="aboutUsTitle">
+                درباره ی ما
+            </p>
+            <p class="aboutUsText">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می‌باشد.
+                کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می‌طلبد تا با نرم‌افزارها شناخت بیشتری را برای طراحان رایانه ای علی‌الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
+            </p>
+        </div>
+
+        <div class="contactUs">
+            <p class="contactUsTitle">راه های ارتباط با ما</p>
+            <p class="phoneNumber contactWay">0915 000 00 00</p>
+            <p class="email contactWay">branShop@gmail.com</p>
+            <p class="address contactWay">مشهد - احمد آباد</p>
+        </div>
+
+    </footer>
+
+    <script type="module" src="script/admin.js"></script>
+</body>
+
+</html>

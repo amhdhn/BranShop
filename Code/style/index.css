@@ -1,0 +1,305 @@
+/* dailyOfferConteiner */
+
+.dailyOfferContainer {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.dailyOfferTitle {
+    direction: rtl;
+    width: 90%;
+    color: rgb(224, 58, 28);
+    font: .85em var(--iran);
+    margin: 20px auto 0;
+    border-bottom: 3px solid rgba(224, 57, 28, 0.267);
+    padding-bottom: 5px;
+    text-align: right;
+}
+
+.dailyOfferList {
+    display: none;
+    width: 90%;
+    margin: 20px auto 0;
+    flex-direction: column;
+}
+
+.dailyOfferItem {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+
+.dailyOfferItem.active {
+    display: flex;
+    animation: fadein 1s;
+}
+
+.dailyOfferImg {
+    width: 38%;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+}
+
+.dailyOfferDetails {
+    font-family: var(--iran);
+    width: 55%;
+    max-width: 55%;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+}
+
+.dailyOfferName {
+    font-size: .9em;
+    color: var(--txtClr1);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.dailyOfferOriginalPrice {
+    font-size: .75em;
+    text-decoration: line-through;
+    color: tomato;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.dailyOfferDiscountPrice {
+    direction: rtl;
+    color: var(--txtClr2);
+    font-size: .85em;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.dailyOfferSee {
+    background-color: dodgerblue;
+    padding: 4px 18px;
+    margin-top: 10px;
+    color: #eee;
+    cursor: pointer;
+    font-size: .8em;
+    border-radius: 7px;
+    width: fit-content;
+}
+
+.dailyBtnDiv {
+    width: 90%;
+    margin: 20px auto 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+    padding: 0 0 15px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.dailyBtnDiv button {
+    width: 30px;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.096);
+    border-radius: 50%;
+    color: var(--txtClr1);
+    transition: background-color .6s;
+}
+
+.dailyBtnDiv button:hover {
+    background-color: rgba(21, 94, 167, 0.445);
+}
+
+.loadingDailyOffers {
+    width: 30px;
+    height: 30px;
+    background-image: linear-gradient(to right, #00000031, var(--bgClr));
+    border-radius: 50%;
+    position: relative;
+    animation: spin 1s linear infinite;
+    opacity: 1;
+    margin: 50px auto 50px;
+    z-index: 0;
+}
+
+.loadingDailyOffers::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bgClr);
+    height: 24px;
+    width: 24px;
+    content: "";
+    border-radius: 50%;
+}
+
+
+/* categoryBodyList */
+
+.categoryBodyList {
+    width: 90%;
+    margin: 15px auto 0;
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    align-items: center;
+    direction: rtl;
+    gap: 10px;
+}
+
+.categoryBodyItem {
+    padding: 5px 20px;
+    border-radius: 7px;
+    font: .77em var(--iran);
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.178);
+    color: var(--txtClr1);
+    transition: background-color .6s;
+}
+
+.categoryBodyItem:hover {
+    background-color: rgba(0, 0, 0, 0.178);
+}
+
+
+/* catShowListContainer */
+
+.catShowListContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    margin-top: 20px !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.catShowHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    font-family: var(--iran);
+}
+
+.catShowSeeAll {
+    position: relative;
+    padding-left: 20px;
+    color: var(--blueClr);
+    font-size: .78em;
+}
+
+.catShowSeeAll::before {
+    content: "\e5cb";
+    font: 1.4em "material icons";
+    color: var(--blueClr);
+    position: absolute;
+    left: 0;
+    margin-top: 2px;
+}
+
+.catShowList {
+    width: 90%;
+    direction: rtl;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.178);
+    padding-bottom: 40px;
+}
+
+.catShowItem {
+    width: 150px;
+    min-width: 150px;
+    font-family: var(--iran);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.catShowImg {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.catShowName {
+    color: var(--txtClr1);
+    font-size: .85em;
+    margin-top: 10px;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+}
+
+.catShowPrice {
+    color: var(--txtClr2);
+    font-size: .85em;
+    line-height: 1em;
+    margin-top: 5px;
+}
+
+.catShowSee {
+    background-color: dodgerblue;
+    color: #eee;
+    margin-top: 10px;
+    font-size: .85em;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    align-self: center;
+    padding: 5px 0;
+    text-align: center;
+}
+
+@media screen and (min-width:649px) {
+    .dailyOfferTitle {
+        font-size: 1.1em;
+        width: 100%;
+    }
+    .dailyOfferList {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        gap: 20px;
+        direction: rtl;
+        justify-content: flex-start;
+    }
+    .dailyOfferItem {
+        display: flex !important;
+        flex-direction: column;
+        min-width: 150px;
+        max-width: 150px;
+    }
+    .dailyOfferImg {
+        width: 100%;
+        max-width: 150px;
+    }
+    .dailyOfferDetails {
+        width: 100%;
+        max-width: unset;
+    }
+    /* dailyBtnDiv */
+    .dailyBtnDiv button {
+        display: none;
+    }
+    .dailyBtnDiv {
+        width: 100%;
+    }
+    /* categoryBodyList */
+    .categoryBodyList {
+        display: none;
+    }
+    .catShowHeader {
+        width: 100%;
+    }
+    .catShowList {
+        width: 100%;
+    }
+}

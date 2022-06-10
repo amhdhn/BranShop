@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حساب کاربری</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style/userProfile.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/footer.css">
+</head>
+
+<body>
+    <header class="container">
+        <div class="headerRow">
+            <a href="./index.html" class="logo">Bran<span>Shop</span></a>
+            <div class="headerBtnList">
+                <button href="./userCart.html" class="logoutBtn btn">logout</button>
+                <a href="./userCart.html" class="cartBtn btn">shopping_bag</a>
+                <a href="./index.html" class="userBtn btn">home</a>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="controllSection container">
+        <div class="sectionTitleList hideScrollBar">
+            <p class="sectionTitleItem userInfoBtn active">مشخصات کاربری</p>
+            <p class="sectionTitleItem changePassBtn">ویرایش کلمه عبور</p>
+            <p class="sectionTitleItem historyBtn">وضعیت سفارشات</p>
+        </div>
+        <div class="controlBody">
+            <div class="userInfoSection">
+                <button class="editInfo">ویرایش حساب</button>
+                <button class="cancelEdit">لغو تغییرات</button>
+                <div class="infoParentDiv">
+                    <label class="nameTitle">نام</label>
+                    <input type="text" class="nameInput" placeholder=" نام خود را وارد کنید">
+                </div>
+                <div class="infoParentDiv">
+                    <label class="lNameTitle">نام خانوادگی</label>
+                    <input type="text" class="lNameInput" placeholder=" نام خانوادگی خود را وارد کنید">
+                </div>
+                <div class="infoParentDiv">
+                    <label class="addressTitle">آدرس</label>
+                    <input type="text" class="addressInput" placeholder=" ادرس خود را وارد کنید">
+                </div>
+                <div class="infoParentDiv">
+                    <label class="phoneNumberTitle">شماره تلفن</label>
+                    <input type="text" class="phoneNumberInput" placeholder=" شماره تلفن خود را وارد کنید">
+                </div>
+                <button class="confirmEdit">ثبت تغییرات</button>
+            </div>
+
+            <div class="changePassSection">
+                <p class="title">تغییر کلمه عبور</p>
+                <div class="passParentDiv">
+                    <label class="oldPassTitle">کلمه عبور کنونی</label>
+                    <input type="password" class="currentPassInput" placeholder=" کلمه عبور کنونی خود را وارد کنید .">
+                </div>
+                <div class="passParentDiv">
+                    <label class="newPassTitle">کلمه عبور جدید</label>
+                    <input type="password" class="newPassInput" placeholder="کلمه عبور جدید را وارد کنید.">
+                </div>
+                <div class="passParentDiv">
+                    <label class="confirmPassTitle">تکرار کلمه عبور جدید</label>
+                    <input type="password" class="confirmPassInput" placeholder="کلمه عبور جدید را دوباره وارد کنید.">
+                </div>
+                <button class="confirmEditPass">ثبت تغییرات</button>
+
+            </div>
+
+            <div class="historySection">
+                <p class="title">وضعیت سفارشات</p>
+                <div class="historyList"></div>
+            </div>
+
+            <div class="loadingDivContainer">
+                <div class="loadingDiv">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="modalContainer">
+        <div class="modalDiv">
+            <p class="modalMsg"></p>
+        </div>
+    </section>
+
+    <footer class="container">
+
+        <div class="aboutUs">
+            <p class="aboutUsTitle">
+                درباره ی ما
+            </p>
+            <p class="aboutUsText">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می‌باشد.
+                کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می‌طلبد تا با نرم‌افزارها شناخت بیشتری را برای طراحان رایانه ای علی‌الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
+            </p>
+        </div>
+
+        <div class="contactUs">
+            <p class="contactUsTitle">راه های ارتباط با ما</p>
+            <p class="phoneNumber contactWay">0915 000 00 00</p>
+            <p class="email contactWay">branShop@gmail.com</p>
+            <p class="address contactWay">مشهد - احمد آباد</p>
+        </div>
+
+    </footer>
+
+    <script type="module" src="script/userProfile.js"></script>
+</body>
+
+</html>

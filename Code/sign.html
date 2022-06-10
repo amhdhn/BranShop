@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ایجاد حساب کاربری</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/footer.css">
+</head>
+
+<body>
+    <header class="container">
+        <div class="headerRow">
+            <a href="./index.html" class="logo">Bran<span>Shop</span></a>
+            <div class="headerBtnList">
+                <div class="searchContainer">
+                    <div class="searchDiv">
+                        <div class="searchInputDiv">
+                            <p class="loadingSpin"></p>
+                            <input type="text" class="searchInput" placeholder="جستجو کنید">
+                        </div>
+                        <p class="searchResultHint">نتایج جستجو</p>
+                        <div class="searchResultList customScrollBar"></div>
+                    </div>
+                </div>
+                <p class="searchBtn btn">search</p>
+                <a href="./userCart.html" class="cartBtn btn">shopping_bag</a>
+                <a href="./index.html" class="homeBtn btn">home</a>
+                <p class="navigationBtn btn">menu</p>
+            </div>
+        </div>
+        <div class="headerRow2">
+            <p class="categoriesTitle">دسته بندی</p>
+            <div class="categories">
+                <div class="categoryList"></div>
+            </div>
+        </div>
+        <div class="minSearchContainer">
+            <div class="minSearchInputDiv">
+                <p class="closeSearchDivBtn btn">close</p>
+                <p class="minLoadingSpin"></p>
+                <input type="text" class="minSearchInput" placeholder="جستجو کنید">
+            </div>
+            <p class="minSearchResultHint">نتایج جستجو</p>
+            <div class="minSearchResultList customScrollBar"></div>
+        </div>
+        <div class="navigationCloser"></div>
+        <div class="navigationContainer">
+            <div class="navigationHeader">
+                <p class="logo">Bran<span>Shop</span></p>
+                <p class="navigationCloseBtn btn">close</p>
+            </div>
+            <div class="navigationList center">
+                <p class="navigationLoading"></p>
+            </div>
+        </div>
+    </header>
+
+    <section class="modalContainer">
+        <div class="modalDiv">
+            <p class="modalMsg"></p>
+        </div>
+    </section>
+
+    <section class="formSection">
+        <p class="loginTitle">ساخت حساب کاربری</p>
+        <form class="loginForm">
+            <div class="inputDiv">
+                <label class="emailLabel">ایمیل</label>
+                <input type="email" class="emailInput" placeholder="ایمیل خود را وارد کنید." required>
+            </div>
+            <div class="inputDiv">
+                <label class="passwordLabel">کلمه عبور</label>
+                <input type="password" class="passwordInput" placeholder="پسورد خود را وارد کنید." required>
+                <button class="passToggle btn">visibility</button>
+            </div>
+            <div class="inputDiv">
+                <label class="nameLabel">نام</label>
+                <input type="text" class="nameInput" placeholder="نام خود را وارد کنید." required>
+            </div>
+            <div class="inputDiv">
+                <label class="lNameLabel">نام خانوادگی</label>
+                <input type="text" class="lNameInput" placeholder="نام خانوادگی خود را وارد کنید." required>
+            </div>
+            <div class="inputDiv">
+                <label class="phoneLabel">شماره تلفن</label>
+                <input type="number" class="phoneInput" placeholder="شماره خود را وارد کنید." required>
+            </div>
+            <div class="inputDiv">
+                <label class="addressLabel">آدرس</label>
+                <input type="text" class="addressInput" placeholder="ادرس خود را وارد کنید." required>
+            </div>
+            <button class="confirmBtn" id="confirmBtn">ثبت نام</button>
+            <p class="msgText">نام کاربری یا کلمه ی عبور اشتباه می باشد.</p>
+            <a href="./login.html" class="signBtn">برای ورود به حساب کاربری اینجا کلیک کنید.</a>
+        </form>
+    </section>
+    <footer class="container">
+
+        <div class="aboutUs">
+            <p class="aboutUsTitle">
+                درباره ی ما
+            </p>
+            <p class="aboutUsText">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می‌باشد.
+                کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می‌طلبد تا با نرم‌افزارها شناخت بیشتری را برای طراحان رایانه ای علی‌الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
+            </p>
+        </div>
+
+        <div class="contactUs">
+            <p class="contactUsTitle">راه های ارتباط با ما</p>
+            <p class="phoneNumber contactWay">0915 000 00 00</p>
+            <p class="email contactWay">branShop@gmail.com</p>
+            <p class="address contactWay">مشهد - احمد آباد</p>
+        </div>
+
+    </footer>
+
+    <script type="module" src="script/sign.js"></script>
+    <script type="module" src="script/header.js"></script>
+
+</body>
+
+</html>

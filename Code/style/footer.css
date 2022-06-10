@@ -1,0 +1,128 @@
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(46, 46, 46);
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.aboutUs {
+    width: 90%;
+    margin: 20px 0 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.253);
+    padding-bottom: 20px;
+}
+
+.aboutUsTitle {
+    font: .9em var(--iran);
+    color: #fff;
+    direction: rtl;
+    position: relative;
+    padding-right: 30px;
+}
+
+.aboutUsTitle::before {
+    content: "\e887";
+    font: 1.4em "material icons";
+    color: #fff;
+    position: absolute;
+    right: 0;
+    margin-top: 3px;
+}
+
+.aboutUsText {
+    font: .8em var(--iran);
+    color: #ccc;
+    direction: rtl;
+    position: relative;
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 25px;
+}
+
+
+/* contactUs */
+
+.contactUs {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 0 20px;
+}
+
+.contactUsTitle {
+    direction: rtl;
+    position: relative;
+    padding-right: 30px;
+    color: #fff;
+    margin-bottom: 20px;
+    font: .9em var(--iran);
+}
+
+.contactUsTitle::before {
+    content: "\e8a3";
+    font: 1.4em "material icons";
+    color: #fff;
+    position: absolute;
+    right: 0;
+    margin-top: 3px;
+}
+
+.contactWay {
+    position: relative;
+    padding-left: 30px;
+    color: #fff;
+    font: .85em var(--iran);
+    margin-top: 7px;
+}
+
+.phoneNumber::before {
+    content: "\e0b0";
+    font: 1.4em "material icons";
+    color: #fff;
+    position: absolute;
+    left: 0;
+}
+
+.email::before {
+    content: "\e158";
+    font: 1.4em "material icons";
+    color: #fff;
+    position: absolute;
+    left: 0;
+    margin-top: 3px;
+}
+
+.address::before {
+    content: "\e55e";
+    font: 1.4em "material icons";
+    color: #fff;
+    position: absolute;
+    left: 0;
+    margin-top: 2px;
+}
+
+@media screen and (min-width:649px) {
+    footer {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        border-radius: 5px 5px 0 0;
+    }
+    .aboutUs {
+        width: 40%;
+        border-bottom: none;
+        border-left: 1px solid rgba(255, 255, 255, 0.253);
+        padding-bottom: 0;
+        padding-left: 40px;
+        order: 2;
+    }
+    .contactUs {
+        width: 40%;
+        margin-top: 20px;
+    }
+}

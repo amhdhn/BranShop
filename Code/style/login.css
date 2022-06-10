@@ -1,0 +1,173 @@
+.formSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 70px auto 200px;
+    max-width: 500px;
+}
+
+.loginTitle {
+    width: 80%;
+    direction: rtl;
+    font: 1.05em var(--iran);
+    text-align: center;
+    color: var(--txtClr2);
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.inputDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    direction: rtl;
+    margin-top: 20px;
+    position: relative;
+}
+
+label {
+    font: .9em var(--iran);
+    color: var(--txtClr1);
+    position: relative;
+}
+
+label::after {
+    font: 1.4em "material icons";
+    position: absolute;
+    right: 5px;
+    margin-top: 38px;
+    color: var(--blueClr);
+}
+
+.emailLabel::after {
+    content: "\e158";
+}
+
+.passwordLabel::after {
+    content: "\e897";
+}
+
+.nameLabel::after {
+    content: "\e0ba";
+}
+
+.lNameLabel::after {
+    content: "\e0ba";
+}
+
+.phoneLabel::after {
+    content: "\e0b0";
+}
+
+.addressLabel::after {
+    content: "\e0c8";
+}
+
+.inputDiv input {
+    height: 35px;
+    border: none;
+    outline: none;
+    padding: 0 40px 0 10px;
+    font: .85em var(--iran);
+    color: var(--txtClr2);
+    background-color: transparent;
+    margin-top: 7px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.082);
+    transition: border-bottom .6s;
+}
+
+.inputDiv input:focus {
+    border-bottom: 2px solid var(--blueClr);
+}
+
+.msgText {
+    font: .85em var(--iran);
+    color: rgb(196, 39, 39);
+    direction: rtl;
+    position: relative;
+    padding-right: 25px;
+    opacity: 0;
+    transition: opacity .6s;
+}
+
+.msgText.active {
+    opacity: 1;
+}
+
+.msgText::before {
+    content: "\e001";
+    font: 1.5em "material icons";
+    position: absolute;
+    right: 0;
+    margin-top: 2px;
+}
+
+.passToggle {
+    position: absolute;
+    top: 38px;
+    font: 1.29em "material icons";
+    color: var(--blueClr);
+    left: 10px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.confirmBtn {
+    margin: 30px 0 20px;
+    background-color: var(--blueClr);
+    height: 35px;
+    text-align: center;
+    font: .85em var(--iran);
+    color: #eee;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.forgetBtn,
+.signBtn {
+    outline: none;
+    border: none;
+    font: .85em var(--iran);
+    direction: rtl;
+    margin-top: 10px;
+    cursor: pointer;
+    color: var(--txtClr1);
+    position: relative;
+    transition: padding-right .6s;
+    width: fit-content;
+    align-self: flex-end;
+}
+
+.forgetBtn::before,
+.signBtn::before {
+    content: "\e5cb";
+    font: 1.4em "material icons";
+    color: var(--txtClr2);
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    margin-top: 3px;
+    transition: opacity .6s;
+}
+
+.forgetBtn:hover,
+.signBtn:hover {
+    padding-right: 25px;
+}
+
+.forgetBtn:hover::before,
+.signBtn:hover::before {
+    opacity: 1;
+}

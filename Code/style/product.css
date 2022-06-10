@@ -1,0 +1,332 @@
+/* productContainer */
+
+.productContainer {
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto 20px;
+    align-items: center;
+}
+
+.productMainImg {
+    width: 90%;
+    border-radius: 7px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.productDetails {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    direction: rtl;
+    margin-top: 20px;
+    font-family: var(--iran);
+}
+
+.productName {
+    font-size: 1.15em;
+    color: var(--txtClr2);
+    position: relative;
+    padding-right: 30px;
+}
+
+.productName:before {
+    content: "\f05b";
+    font: 1.2em "material icons";
+    color: var(--blueClr);
+    position: absolute;
+    right: 0;
+    margin-top: 5px;
+}
+
+.productDiscountValue {
+    height: 30px;
+    width: 120px;
+    background-color: rgb(211, 75, 75);
+    border-radius: 15px;
+    display: none;
+    align-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: .85em;
+}
+
+.productPriceDiv {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 30px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.productPriceLabel {
+    font-size: .85em;
+    color: var(--txtClr2);
+    direction: rtl;
+}
+
+.productPrice {
+    font-size: .95em;
+    color: var(--txtClr1);
+}
+
+.productDiscount {
+    font-size: .87em;
+    color: rgb(185, 34, 34);
+    text-decoration: line-through;
+    font-weight: 700;
+    display: none;
+}
+
+.productDescribe {
+    font-size: .85em;
+    margin-top: 10px;
+    text-align: justify;
+    color: var(--txtClr2);
+    line-height: 1.9em;
+}
+
+.productNotExist {
+    height: 40px;
+    color: #fff;
+    background-color: rgb(102, 102, 102);
+    font: .9em var(--iran);
+    margin-top: 15px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.addToCartBtn {
+    height: 40px;
+    color: #fff;
+    background-color: var(--blueClr);
+    font: .9em var(--iran);
+    margin-top: 15px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: background-color .6s, padding-right .6s;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.addToCartBtn::before {
+    content: "\e854";
+    font: 1.4em "material icons";
+    position: absolute;
+    right: 27%;
+    opacity: 0;
+    transition: opacity .6s;
+}
+
+.addToCartBtn:hover {
+    background-color: rgb(52, 107, 151);
+    padding-right: 30px;
+}
+
+.addToCartBtn:hover:before {
+    opacity: 1;
+}
+
+.manageProductNumberDiv {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    direction: ltr;
+    align-self: center;
+    width: 250px;
+    gap: 10px;
+}
+
+.decreaseNumber,
+.increaseNumber {
+    font: 1.4em "material icons";
+    color: var(--txtClr2);
+    width: 35px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.137);
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color .6s;
+}
+
+.decreaseNumber:hover,
+.increaseNumber:hover {
+    background-color: rgba(0, 0, 0, 0.37);
+}
+
+.numberInCart {
+    width: 170px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.137);
+    font: 1.1em var(--iran);
+    color: var(--txtClr1);
+    border-radius: 40px;
+}
+
+.remainProductNumber {
+    position: relative;
+    margin: 10px 0;
+    padding-right: 30px;
+    font-size: .85em;
+    color: var(--txtClr1);
+    display: none;
+}
+
+.remainProductNumber:before {
+    content: "\ea12";
+    font: 1.6em "material icons";
+    color: var(--blueClr);
+    position: absolute;
+    right: 0;
+}
+
+
+/* recomendedProductContainer */
+
+.recomendedProductContainer {
+    width: 90%;
+    margin: 40px auto;
+    display: none;
+    flex-direction: column;
+}
+
+.recomendedProducts {
+    direction: rtl;
+    font: .95em var(--iran);
+    color: var(--txtClr1);
+    position: relative;
+    padding-right: 30px;
+}
+
+.recomendedProducts:before {
+    position: absolute;
+    right: 0;
+    margin-top: 2px;
+    content: "\e54c";
+    font: 1.4em "material icons";
+    color: var(--blueClr);
+}
+
+.recomendedProductList {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    direction: rtl;
+    margin-top: 20px;
+}
+
+.recomendedProductItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    direction: rtl;
+    font-family: var(--iran);
+    width: 120px;
+}
+
+.recomendedProductImg {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.recomendedProductDetails {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.recomendedProductName {
+    font-size: .85em;
+    color: var(--txtClr1);
+    white-space: nowrap;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.recomendedProductPrice {
+    font-size: .8em;
+    color: var(--txtClr2);
+}
+
+.recomendedProductShow {
+    background-color: var(--blueClr);
+    border-radius: 5px;
+    color: #fff;
+    font-size: .76em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    transition: background-color .6s;
+    margin-top: 10px;
+}
+
+.recomendedProductShow:hover {
+    background-color: rgb(52, 107, 151);
+}
+
+
+/* active */
+
+.active {
+    display: flex;
+}
+
+@media screen and (min-width:649px) {
+    .productContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 20px auto 20px !important;
+        gap: 30px;
+    }
+    .productMainImg {
+        width: 45%;
+        order: 2;
+        max-width: 350px;
+    }
+    .productDetails {
+        max-width: 500px;
+    }
+    /* recomendedProductContainer */
+    .recomendedProductContainer {
+        margin: 40px auto !important;
+    }
+    .recomendedProductList {
+        gap: 25px;
+    }
+    .recomendedProductItem {
+        width: 150px;
+    }
+    .recomendedProductImg {
+        width: 150px;
+        height: 150px;
+    }
+}
